@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+		<!--jquery CDN -->
+		<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script
+
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/button.min.css">
+		<script src="js/main.js"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+        <header>
+
+  <!--<button class="ui inverted button">Standard</button>-->
+  <button id="button_menu" class="ui mini inverted red button">Overzicht</button>
+  <!--<button class="ui inverted orange button">Orange</button>-->
+  <!--<button class="ui inverted yellow button">Yellow</button>-->
+  <!--<button class="ui inverted olive button">Olive</button>-->
+  <!--<button class="ui inverted green button">Green</button>-->
+  <!--<button class="ui inverted teal button">Teal</button>-->
+  <!--<button class="ui inverted blue button">Blue</button>-->
+  <!--<button class="ui inverted violet button">Violet</button>-->
+  <!--<button class="ui inverted purple button">Purple</button>-->
+  <!--<button class="ui inverted pink button">Pink</button>-->
+  <!--<button class="ui inverted brown button">Brown</button>-->
+  <!--<button class="ui inverted grey button">Grey</button>-->
+  <!--<button class="ui inverted black button">Black</button>-->
+
+        </header>
+		<div class="reveal">
+			<div class="slides">
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Yeah
+
+                    </script>
+                </section>
+
+			</div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
