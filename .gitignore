@@ -56,3 +56,7 @@ fabric.properties
 local
 /local
 
+/idea/*
+.idea
+
+
