@@ -47,12 +47,15 @@
 		<div class="reveal">
 			<div class="slides">
 
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Yeah
+             {% for slide in slides %}
 
-                    </script>
+                <section>
+                {{ slide }}
                 </section>
+
+
+            {% endfor %}
+
 
 			</div>
 		</div>

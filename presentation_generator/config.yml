@@ -1,0 +1,7 @@
+presentation:
+  filename: presentation.html
+  title: Dijkmate 6
+
+
+content:
+  dirname: content

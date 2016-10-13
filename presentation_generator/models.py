@@ -115,7 +115,7 @@ class Folder():
     def __init__(self, path):
         self.path = os.path.realpath(path)
         if os.path.isfile(path):
-            raise Exception('trying to get content using filename')
+            raise Exception('trying to get folder using filename')
         self.items = [(i, os.path.join(path, i)) for i in os.listdir(path)]
 
 
@@ -134,10 +134,10 @@ class Folder():
         if len(items_starting_with) > 1:
             raise Exception('multiple items with same name')
         if len(items_starting_with) == 0:
-            raise Exception('no items with found with name {0}'.format(name))
+            raise AttributeError('no items with found with name {0} at path: {1}'.format(name, self.path))
 
         match_item = items_starting_with[0]
-        logging.info('get content: {0}'.format(match_item))
+        logging.info('get item: {0}'.format(match_item))
 
         if os.path.isfile(match_item[1]):
             return SourceFile.from_path(match_item[1])
@@ -145,12 +145,12 @@ class Folder():
             return Folder(match_item[1])
 
 
-    def get_dir(self, name):
+    def get_folder(self, name):
         items_starting_with = [i for i in self.dirs if i[0].startswith(name)]
         if len(items_starting_with) > 1:
             raise Exception('multiple items with same name')
         if len(items_starting_with) == 0:
-            raise Exception('no items with found with name {0}'.format(name))
+            raise AttributeError('no items with found with name {0}'.format(name))
 
         match_item = items_starting_with[0]
         return Folder(match_item[1])
@@ -161,7 +161,7 @@ class Folder():
         if len(items_starting_with) > 1:
             raise Exception('multiple items with same name')
         if len(items_starting_with) == 0:
-            raise Exception('no items with found with name {0}'.format(name))
+            raise AttributeError('no items with found with name {0}'.format(name))
 
         match_item = items_starting_with[0]
         return SourceFile.from_path(match_item[1])
@@ -172,9 +172,25 @@ class Folder():
 
     @property
     def parent(self):
-        parent_path = os.path.realpath(os.path.basename(self.path))
+        parent_path, current = os.path.split(self.path)
         return Folder(parent_path)
 
 
+    def has_dir(self, name):
+        try:
+            self.get_folder(name)
+            return True
+        except AttributeError:
+            return False
+
+    def has_file(self, name):
+        try:
+            self.get_file(name)
+            return True
+        except AttributeError:
+            return False
+
     def __repr__(self):
-        return '[dir: >> {0} <<]'.format(os.path.basename(self.path))
+        return '[dir: >> {0} <<, {1} items]'.format(os.path.basename(self.path), len(self.items))
+
+
