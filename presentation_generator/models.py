@@ -73,12 +73,19 @@ class SourceFile():
 
     @classmethod
     def from_path(cls, path):
+
         return cls(name=os.path.basename(path), path=path)
+
 
     @classmethod
     def _load_source(cls, path: str):
         with open(path) as f:
-            source = f.read()
+
+            try:
+                source = f.read()
+            except UnicodeDecodeError:
+                source= 'IMAGE'
+
             return source
 
     @property
@@ -116,7 +123,7 @@ class Folder():
         self.path = os.path.realpath(path)
         if os.path.isfile(path):
             raise Exception('trying to get folder using filename')
-        self.items = [(i, os.path.join(path, i)) for i in os.listdir(path)]
+        self.items = [(i, os.path.join(path, i)) for i in os.listdir(path) if not i.startswith('.')]
 
 
 
