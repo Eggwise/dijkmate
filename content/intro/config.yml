@@ -1,0 +1,20 @@
+order:
+ - welkom
+ - instructies
+
+
+
+slides:
+
+  welkom:
+    title: Welkom
+    background: welkom
+    text: |
+      Welkom op de dijkmate website
+      asdasd
+      asdasd
+      asdasd
+
+
+
+
