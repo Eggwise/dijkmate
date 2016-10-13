@@ -8,16 +8,20 @@ slides:
 
   welkom:
     title: Welkom
-    background: welkom
+    background: test.png
     text: |
-      Welkom op de dijkmate website
-      asdasd
-      asdasd
-      asdasd
+      Plaaatjeee
 
 
   instructies:
     title: Instructies
     text: |
-      Dit is hoe het werkt
+      ## Dit is hoe het werkt
+      - palla
+      - oke
+      - hoi
+
+      ---
+
+      oke
 

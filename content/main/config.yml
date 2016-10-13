@@ -1,6 +1,6 @@
 order:
  - welkom
- - instructies
+
 
 
 
@@ -8,7 +8,7 @@ slides:
 
   welkom:
     title: Welkom
-    background: welkom
+    background: main.jpg
     text: |
       Welkom op de dijkmate website
       asdasd
@@ -16,8 +16,4 @@ slides:
       asdasd
 
 
-  instructies:
-    title: Instructies
-    text: |
-      Dit is hoe het werkt
 
