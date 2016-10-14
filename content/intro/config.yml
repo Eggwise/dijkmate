@@ -7,21 +7,28 @@ order:
 slides:
 
   welkom:
-    title: Welkom
-    background: test.png
+    title: Falco
+    background: falco.jpg
     text: |
-      Plaaatjeee
+      # palla
+      - hoi
+      - a
 
 
   instructies:
     title: Instructies
     text: |
       ## Dit is hoe het werkt
+      ---
+
       - palla
+      - palla
+      - kerelman
       - oke
-      - hoi
 
       ---
 
       oke
 
+    html: |
+      <strong> gast </strong>

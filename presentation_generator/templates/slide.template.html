@@ -4,6 +4,8 @@
          <h1>{{title}}</h1>
          </section>
      {% else %}
+
+
          <section data-markdown>
                 <h1>{{title}}</h1>
                <script type="text/template">
@@ -11,3 +13,9 @@
             </script>
         </section>
      {% endif %}
+
+    {% if html|length > 0 %}
+        {{ html }}
+    {% endif %}
+
+

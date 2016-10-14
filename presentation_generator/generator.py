@@ -136,7 +136,7 @@ def main():
 
 
     ###  =============   render presentation    =============  ###
-    rendered_presentation = presentation_template.render(slides=slides)
+    rendered_presentation = presentation_template.render(**dict(slides=slides, **presentation_config))
     pres_filename = presentation_config['filename']
     pres_title = presentation_config['title']
 
